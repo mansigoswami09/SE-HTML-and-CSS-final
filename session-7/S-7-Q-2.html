@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Playlist Bar</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        padding: 20px;
+        color: white;
+    }
+
+   
+    .playlist {
+        display: flex;
+        gap: 15px;
+        overflow-x: auto;
+        padding-bottom: 10px; 
+        scroll-behavior: smooth;
+    }
+
+  
+    .song-card {
+        width: 200px;
+        height: 80px;
+        background-color: #181818; 
+        border-radius: 8px;
+        padding: 12px;
+        display: flex;
+        align-items: center; 
+        flex-shrink: 0; 
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        border-left: 4px solid #1DB954; 
+    }
+
+    .song-card:hover {
+        background-color: #282828; 
+    }
+    .song-card img{
+        width:50px;
+        height:50px;
+        border-radius:5px;
+        margin-right:10px;
+    }
+
+    .song-info h3 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: bold;
+        letter-spacing: -0.2px;
+    }
+
+    .song-info p {
+        margin: 6px 0 0;
+        font-size: 13px;
+        color: #b3b3b3; 
+    }
+</style>
+</head>
+<body>
+
+<h2>🎵 Spotify Playlist</h2>
+
+<div class="playlist">
+
+    <div class="song-card">
+        <img src="https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96" alt="Song 1" width="50">
+        <div class="song-info">
+            <h3>Perfect</h3>
+            <p>Ed Sheeran</p>
+        </div>
+    </div>
+
+    <div class="song-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLC3j0WJDkBf7I4V_bmy_6ZVz0_We7wVYStRqfpBM8Q&s=10" alt="Song 2" width="50">
+        <div class="song-info">
+            <h3>Kabhu Kabhi Aditi</h3>
+            <p>Rashid Ali</p>
+        </div>
+    </div>
+
+    <div class="song-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbZiIRYlFa6AbkxatlvxG9LfG7X5p7BiRw6fK9xkstFg&s=10" alt="Song 3" width="50">
+        <div class="song-info">
+            <h3>Maahi Ve</h3>
+            <p>A.R.Rahman</p>
+        </div>
+    </div>
+
+    <div class="song-card">
+        <img src="https://c.saavncdn.com/569/M-S-Dhoni-The-Untold-Story-3-Hindi-2016-500x500.jpg" alt="Song 4" width="50">
+        <div class="song-info">
+            <h3>Besabriyaan</h3>
+            <p>Armaan Malik</p>
+        </div>
+    </div>
+
+    <div class="song-card">
+         <img src="https://m.media-amazon.com/images/I/51fMCyTaaIL._UF1000,1000_QL80_.jpg" alt="Song 5" width="50">
+        <div class="song-info">
+            <h3>Die With A Smile</h3>
+            <p>Lady Gaga</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

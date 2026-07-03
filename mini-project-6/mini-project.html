@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Tag Bio Link</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a, #020617);
+            min-height: 100vh;
+        }
+       
+        .profile-card {
+            border: 2px solid #bf19ce;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+       
+        .btn-twitch { background-color: #9146FF; color: white; }
+        .btn-twitch:hover { background-color: #772ce8; color: white; }
+        
+        .btn-discord { background-color: #5865F2; color: white; }
+        .btn-discord:hover { background-color: #4752c4; color: white; }
+        
+        .btn-steam { background-color: #171A21; color: white; }
+        .btn-steam:hover { background-color: #101217; color: white; }
+
+    
+        .border-spotify { border-left: 6px solid #1DB954 !important; }
+        .btn-spotify { background-color: #1DB954; color: white; }
+        .btn-spotify:hover { background-color: #1aa34a; color: white; }
+
+        .border-youtube { border-left: 6px solid #FF0000 !important; }
+        .btn-youtube { background-color: #FF0000; color: white; }
+        .btn-youtube:hover { background-color: #cc0000; color: white; }
+
+        .border-apple { border-left: 6px solid #000000 !important; }
+        .btn-apple { background-color: #000000; color: white; }
+        .btn-apple:hover { background-color: #222222; color: white; }
+
+        .border-linkedin { border-left: 6px solid #0077B5 !important; }
+        .btn-linkedin { background-color: #0077B5; color: white; }
+        .btn-linkedin:hover { background-color: #005987; color: white; }
+    </style>
+</head>
+<body class="py-5 text-dark">
+
+<div class="container" style="max-width: 900px;">
+
+    <div class="profile-card bg-white p-4 rounded-4 text-center mb-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk9QyS0UId1IMdO-SzQ08s9CkGGOQ9GDi6thhctWkfxAwOG2UDNwBqRDo&s=10" 
+             alt="Avatar" 
+             class="rounded-circle mb-3" 
+             style="width: 120px; height: 120px; object-fit: cover;">
+        
+        <h2 class="fw-bold mb-3">Shadow Gamer</h2>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-2">
+            <a href="#" class="btn btn-twitch px-4"><i class="bi bi-twitch me-2"></i>Twitch</a>
+            <a href="#" class="btn btn-discord px-4"><i class="bi bi-discord me-2"></i>Discord</a>
+            <a href="#" class="btn btn-steam px-4"><i class="bi bi-steam me-2"></i>Steam</a>
+            <a href="#" class="btn btn-primary px-4" style="background-color: #0077B5; border: none;"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-4 shadow-sm mb-4 mx-auto" style="max-width: 700px;">
+        <h4 class="mb-3 text-center fw-semibold">Manage Profile Links</h4>
+        <form id="musicLinksForm">
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-light">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="Spotify" style="width: 20px;">
+                </span>
+                <input type="url" id="spotify" class="form-control" placeholder="Spotify Profile URL">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-light">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width: 20px;">
+                </span>
+                <input type="url" id="youtube" class="form-control" placeholder="YouTube Music URL">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-light">
+                    <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Apple Music" style="width: 20px;">
+                </span>
+                <input type="url" id="apple" class="form-control" placeholder="Apple Music URL">
+            </div>
+
+            <div class="input-group mb-4">
+                <span class="input-group-text bg-light">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px;">
+                </span>
+                <input type="url" id="linkedin" class="form-control" placeholder="LinkedIn Profile URL">
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Update Links Display</button>
+        </form>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3" id="previewContainer"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("musicLinksForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const preview = document.getElementById("previewContainer");
+    preview.innerHTML = "";
+
+    createCard(
+        document.getElementById("spotify").value,
+        "Spotify",
+        "https://cdn-icons-png.flaticon.com/512/174/174872.png",
+        "spotify"
+    );
+
+    createCard(
+        document.getElementById("youtube").value,
+        "YouTube Music",
+        "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+        "youtube"
+    );
+
+    createCard(
+        document.getElementById("apple").value,
+        "Apple Music",
+        "https://cdn-icons-png.flaticon.com/512/179/179309.png",
+        "apple"
+    );
+
+    createCard(
+        document.getElementById("linkedin").value,
+        "LinkedIn",
+        "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+        "linkedin"
+    );
+});
+
+function createCard(url, name, logo, className){
+    if(!url || url.trim() === "") return;
+
+    
+    let username = url.split("/").filter(part => part !== "").pop();
+    if(username.includes("?")) {
+        username = username.split("?")[0]; 
+    }
+
+    const col = document.createElement("div");
+    col.className = "col";
+
+    col.innerHTML = `
+        <div class="card h-100 border-0 shadow-sm bg-white border-${className}">
+            <div class="card-body d-flex flex-column align-items-center text-center p-4">
+                <img src="${logo}" alt="${name} logo" class="mb-2" style="width: 40px; height: 40px; object-fit: contain;">
+                <h5 class="card-title fw-bold mb-1">${name}</h5>
+                <p class="card-text text-muted small mb-3">@${username}</p>
+                <a href="${url}" target="_blank" class="btn btn-${className} btn-sm px-4 mt-auto w-100">Visit Profile</a>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("previewContainer").appendChild(col);
+}
+</script>
+</body>
+</html>

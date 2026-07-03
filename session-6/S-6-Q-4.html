@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New movie</title>
+    <style>
+     * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: white;
+  padding: 40px;
+}
+
+
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.movie-poster {
+  position: relative; 
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.movie-poster:hover {
+  transform: translateY(-5px);
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #f84464;
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  z-index: 10; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.movie-info {
+  padding: 12px;
+}
+
+.movie-info h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-info p {
+  font-size: 15px;
+  color: #666;
+} 
+    </style>
+</head>
+<body>
+    <h2>Recommended Movies</h2><br>
+    <div class="poster-grid">
+        <div class="movie-poster">
+            <span class="badge">New</span>
+            <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/jindagi-once-more-et00501011-1780035511.jpg" alt="movie poster 1">
+            <div class="movie-info">
+                <h3>Jindagi Once More</h3>
+                <p>Drama/Family</p>
+            </div>
+        </div>
+        <div class="movie-poster">
+           <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/state-of-ramadhani-dharyu-dhani-nu-thay-et00502199-1781510542.jpg" alt="movie poster 2">
+            <div class="movie-info">
+                <h3>State of Ramadhani</h3>
+                <p>Drama/Family</p>
+            </div>
+        </div>
+        <div class="movie-poster">
+           <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/toy-story-5-et00482787-1780901834.jpg" alt="movie poster 3">
+            <div class="movie-info">
+                <h3>Toy Story 5</h3>
+                <p>Adventure/Animation/Comedy
+                    /Family</p>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>
